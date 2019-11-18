@@ -8,13 +8,11 @@ class Element
 {
     protected $x;
     protected $y;
-    protected $rgb;
 
-    public function __construct(int $x, int $y, Couleur $rgb)
+    public function __construct(int $x, int $y)
     {
         $this->x = $x;
         $this->y = $y;
-        $this->rgb = $rgb;
     }
 
     /**
@@ -22,7 +20,7 @@ class Element
      */
     public function getPosition()
     {
-        return '(' . $this->x . ',' . $this->y .')';
+        return '(x = ' . $this->x . ', y = ' . $this->y .')';
     }
 
 

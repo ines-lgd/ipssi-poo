@@ -6,15 +6,16 @@ namespace Ipssi\Evaluation;
 
 class Texte extends Element
 {
+    private $rgb;
     private $contenu;
-    private $police;
 
-    public function __construct(int $x, int $y, Couleur $rgb, string $contenu, string $police)
+    public function __construct(int $x, int $y, Couleur $rgb, string $contenu)
     {
-        parent::__construct($x, $y, $rgb);
+        parent::__construct($x, $y);
+        $this->rgb = $rgb;
         $this->contenu = $contenu;
-        $this->police = $police;
     }
+
 
     /**
      * @return mixed
@@ -25,11 +26,11 @@ class Texte extends Element
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getPolice()
+    public function getRGB(): string
     {
-        return $this->police;
+        return $this->rgb;
     }
 
 

@@ -10,8 +10,7 @@ class Etoile extends Forme
 
     public function __construct(int $x, int $y, Couleur $rgb, string $type, int $nbBranches)
     {
-        parent::__construct($x, $y, $rgb);
-        $this->type = 'nuage';
+        parent::__construct($x, $y, $rgb, $type = 'etoile');
         $this->nbBranches = $nbBranches;
     }
 

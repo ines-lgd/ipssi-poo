@@ -10,8 +10,7 @@ class Nuage extends Forme
 
     public function __construct(int $x, int $y, Couleur $rgb, string $type, int $nbBoucles)
     {
-        parent::__construct($x, $y, $rgb, $type);
-        $this->type = 'nuage';
+        parent::__construct($x, $y, $rgb, $type = 'nuage');
         $this->nbBoucles = $nbBoucles;
     }
 

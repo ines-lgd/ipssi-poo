@@ -25,7 +25,11 @@ class Couleur
 
     public function getRGB()
     {
-        return '('. $this->red . ',' . $this->green . ',' . $this->blue .')';
+        return 'RGB('. $this->red . ', ' . $this->green . ', ' . $this->blue .')';
     }
 
+    public function __toString()
+    {
+        return 'RGB('. $this->red . ', ' . $this->green . ', ' . $this->blue .')';
+    }
 }
