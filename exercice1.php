@@ -9,13 +9,9 @@ class Diviseur {
     {
         $valeurs = [17, 12, 15, 38, 29, 157, 89, -22, 0, 5];
 
-
         if ($diviseur === 0) {
-            //DivisionByZeroError
-            throw new Exception("Divison avec zéro impossible");
-        } /*elseif (!is_int($diviseur) || !is_int($index)) {
-            throw new Exception('Les saisies ne sont pas des nombres entiers');
-        } */elseif ($index > 10) {
+            throw new DivisionByZeroError("Divison avec zéro impossible");
+        } elseif ($index >= count($valeurs)) {
             throw new Exception('L\'indice saisi est supérieur au nombre de valeurs');
         } elseif ($index < 0) {
             throw new Exception('L\'indice saisi est négatif');
@@ -38,6 +34,12 @@ do {
     } catch (Exception $e) {
         $climate->output($e->getMessage());
         echo PHP_EOL;
+        $erreur = true;
+    } catch (\TypeError $e) {
+        echo 'Les saisies ne sont pas des nombres entiers' . PHP_EOL;
+        $erreur = true;
+    } catch (\Throwable $e) {
+        echo 'Gros problème' . PHP_EOL;
         $erreur = true;
     }
 } while ($erreur == true);
